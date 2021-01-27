@@ -1,0 +1,16 @@
+{
+  "name": "test-case-generator",
+  "version": "1.0.0",
+  "description": "it is a online test case generator webapp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shray anand",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
