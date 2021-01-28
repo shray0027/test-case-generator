@@ -25,6 +25,11 @@ header{
 }
 input ,select {
    height: 35px;
+   border : 1.5px solid #888888;
+   border-radius: 5px;
+}
+select{
+    background: #f8f9fa;
 }
 input:focus,select:focus,button:focus {
     outline: none;
@@ -43,7 +48,7 @@ input:focus,select:focus,button:focus {
 }
 .rn-content,.arr-content,.t-content,.g-content{
     width: 100%;
-    height:350px;
+    height:380px;
     border : 1.5px solid #888888;
     border-radius: 0 5px 5px 5px;
 }
@@ -105,22 +110,40 @@ input:focus,select:focus,button:focus {
     border-right: 1.5px solid #888888;
     border-radius:0 5px 0 0 ;
 }
+.rn-b,.arr-b,.t-b,.g-b{
+    width: 80px;
+    color: white;
+    background: black;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: absolute;
+    right: 10%;
+}
+.rn-b{
+    z-index: 2;
+}
 .lower-wrap{
     position: relative;
     margin-top: 32px;
     margin-bottom: 16px;
 }
 .textArea{
-    height: 200px;
+    height: 220px;
     width : 100%;
-    overflow-y: scroll;
     background:  #F4F5DB;
-    font-family: monospace;
     margin :auto;
     border: 1.5px solid #888888;
+    border-radius:5px;
+}
+.textArea p,.textArea p iframe{
+    height: 200px;
+    width : 100%;
+    font-family: monospace;
 }
 .btns{
-    bottom: 5px;
+    bottom: 15px;
     right: 5px;
     position: absolute;
     z-index: 2;

@@ -6,37 +6,41 @@
     <div type="button" onclick="choose_g()"  class="g-label"><p class="label-p">Graph</p></div>
     <div class="randomNumber">
         <div class="rn-content">
-            <p>No. of testcase</p>
-            <input placeholder= "no.of testcase"/>
-            <p>Number/Character</p>
-           <select id ="#symbol">
-               <option value="1">number</option>
-               <option value="2">character</option>
-           </select>
-           <p class="center">Range</p>
-           <p>minimum no.</p>
-            <input placeholder="min number" />
-            <p>maximum no.</p>
-            <input placeholder="max number" />
+            <form method="POST" action="/">
+                <p>No. of testcase</p>
+                <input type="number" name="noTestcase" required placeholder= "no.of testcase"/>
+                <p>Number/Character</p>
+               <select name="noCharOption" required onChange="whichOptionSelectedRN(this.selectedIndex)" id ="#symbol">
+                   <option value="1">number</option>
+                   <option value="2">character</option>
+               </select>
+               <p class="center">Range</p>
+               <p>minimum no.</p>
+                <input type="number" class="range" required name="minRange" placeholder="min number" />
+                <p>maximum no.</p>
+                <input type="number" class="range" required name="maxRange" placeholder="max number" />
+                <button onclick="generate()" class="rn-b" type="submit">generate</button>
+            </form>
         </div>
     </div>
     <div class="array">
-        <div class="arr-content"></div>
+        <div class="arr-content">
+           
+        </div>
     </div>
     <div class="tree">
-        <div class="t-content"></div>
+        <div class="t-content">
+         
+        </div>
     </div>
     <div class="graph">
-        <div class="g-content"></div>
+        <div class="g-content">
+           
+        </div>
     </div>
 </div>
 <div class="lower-wrap">
-    <div class="textArea">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
+    <div class="textArea"><p><iframe src="file.txt" id="inneriframe" frameborder=0 ></iframe></p></div>
     <div class="btns">
         <button class="copyBtn"><i class="fas i1 fa-copy"></i> Copy</button>
         <button class="copyBtn-sm"><i class="fas fa-copy"></i></button>
