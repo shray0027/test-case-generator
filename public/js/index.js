@@ -8,6 +8,7 @@ const arr_l = document.querySelector(".arr-label");
 const t_l = document.querySelector(".t-label");
 const g_l = document.querySelector(".g-label");
 const range= document.querySelectorAll(".range");
+const generateRN= document.querySelector(".rn-form");
 const date =  new Date();
 year.textContent = date.getFullYear();
 const choose_rn = ()=>{
@@ -54,6 +55,7 @@ const choose_g = ()=>{
     t_l.style.zIndex="0";
     g_l.style.zIndex="2";
 }
+
 function whichOptionSelectedRN(e){
     if(e===0){
        range[0].disabled=false;
@@ -63,7 +65,9 @@ function whichOptionSelectedRN(e){
        range[1].disabled=true;
     }
 }
-
+// generateRN.addEventListener("submit",(e) =>{
+//     e.preventDefault();
+// })
 // let txt;
 // function preload(){
 //     txt=loadStrings("file.txt");

@@ -32,6 +32,7 @@ app.get("/",(req,res)=>{
         if(err)
           throw err;
     })
+    res.redirect("/");
 })
 app.get("/file.txt",(req,res)=>{
     fs.readFile("file.txt", 'utf8', function(err, data) {
