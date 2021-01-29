@@ -7,13 +7,14 @@
     <div class="randomNumber">
         <div class="rn-content">
             <form class="rn-form" method="POST" action="/">
-                <p>No. of testcase</p>
-                <input type="number" name="noTestcase" required placeholder= "no.of testcase"/>
-                <p>Number/Character</p>
-               <select name="noCharOption" required onChange="whichOptionSelectedRN(this.selectedIndex)" id ="#symbol">
-                   <option value="1">number</option>
-                   <option value="2">character</option>
-               </select>
+                <p>Number/Character/String</p>
+                <select name="noCharOption" required onChange="whichOptionSelectedRN(this.selectedIndex)" id ="#symbol">
+                    <option value="1">number</option>
+                    <option value="2">character</option>
+                    <option value="3">string</option>
+                </select>
+                <p>size of string</p>
+                <input type="number" name="sizeOfstring" class="range" disabled="true" required placeholder= "enter size of string"/>
                <p class="center">Range</p>
                <p>minimum no.</p>
                 <input type="number" class="range" required name="minRange" placeholder="min number" />
@@ -40,12 +41,12 @@
     </div>
 </div>
 <div class="lower-wrap">
-    <div class="textArea"><p><iframe src="file.txt" id="inneriframe" frameborder=0 ></iframe></p></div>
+    <div class="textArea"><code><iframe style="overflow-x: hidden; width:100%;font-family: monospace; color :aqua;" src="file.txt" id="inneriframe" frameborder=0 ></iframe></code></div>
     <div class="btns">
-        <button class="copyBtn"><i class="fas i1 fa-copy"></i> Copy</button>
-        <button class="copyBtn-sm"><i class="fas fa-copy"></i></button>
-        <button class="downloadBtn"><i class="fas i1 fa-download"></i>Download</button>   
-        <button class="downloadBtn-sm"><i class="fas fa-download"></i></button>  
+        <button class="copyBtn"><i class="fas i1 in fa-copy"></i> Copy</button>
+        <button class="copyBtn-sm"><i class="fas in fa-copy"></i></button>
+        <button class="downloadBtn"><i class="fas i1 in fa-download"></i>Download</button>   
+        <button class="downloadBtn-sm"><i class="fas in fa-download"></i></button>  
     </div>
     
 </div>

@@ -58,11 +58,19 @@ const choose_g = ()=>{
 
 function whichOptionSelectedRN(e){
     if(e===0){
-       range[0].disabled=false;
        range[1].disabled=false;
-    } else {
+       range[2].disabled=false;
        range[0].disabled=true;
+    } else {
+        if(e===2){
+           range[0].disabled=false;
+           range[1].disabled=true;
+           range[2].disabled=true;
+        } else {
        range[1].disabled=true;
+       range[2].disabled=true;
+       range[0].disabled=true;
+        }
     }
 }
 // generateRN.addEventListener("submit",(e) =>{

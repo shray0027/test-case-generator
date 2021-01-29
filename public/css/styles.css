@@ -137,7 +137,7 @@ input:focus,select:focus,button:focus {
     border: 1.5px solid #888888;
     border-radius:5px;
 }
-.textArea p,.textArea p iframe{
+.textArea code,.textArea code{
     height: 200px;
     width : 100%;
     font-family: monospace;
@@ -175,11 +175,44 @@ input:focus,select:focus,button:focus {
     background: #54e346;
     border-radius : 0 100px  100px 0;
 }
-i{
-    color: #ffffff;
-}
+
 .i1{
     margin-right: 5px;
+}
+/*about*/
+i{
+    font-size: 25px;
+}
+.i11{
+    color : #DD4B25;
+}
+.in{
+    color: #ffffff;
+    font-size: 1rem;
+}
+.i2{
+    color :#2663E9;
+}
+.i3{
+    color:#EFD819; 
+}
+.i4{
+    color :#97B64D
+}
+
+.details{
+    list-style-type: none;
+    margin-top: 16px;
+}
+.portrait{
+    width : 250px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px #777;
+}
+h1{
+    font-size: 50px;
+    margin-bottom :16px;
+    font-weight: bold;
 }
 /*footer*/
 
@@ -221,5 +254,19 @@ i{
     }
     .copyBtn,.downloadBtn{
         display: none;
+    }
+    h1 {
+        font-size : 40px;
+        text-align: center;
+    }
+    .portrait{
+        width: 150px;
+        margin:auto;
+    }
+    .about-content{
+        margin-top: 25px;
+    }
+    .about-content-img {
+        display: flex;
     }
 }

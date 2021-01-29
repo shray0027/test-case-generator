@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const fs = require("fs");
-const randomNumber=require(__dirname+"/utils/randomNo")
+const randomNumber=require(__dirname+"/utils/randomNo");
+const randomCharacter=require(__dirname+"/utils/randomCh");
 const app = express();
 
 app.set('view engine' ,'ejs' );
@@ -14,19 +15,19 @@ app.get("/",(req,res)=>{
     res.render("index");
 }).post("/",(req,res)=>{
     const rn = req.body;
-    console.log(rn);
-    const noTestcase=rn.noTestcase;
     const optionRN =rn.noCharOption;
-    let restext = `${noTestcase}\n`;
+    let restext = ``;
     if(optionRN==1){
         const minNo = parseInt(rn.minRange);
         const maxNo = parseInt(rn.maxRange);
-        for(let i =1 ;i<=noTestcase;i++ ){
-            restext+=`${randomNumber(minNo,maxNo)} `;
-        }
-       console.log(randomNumber(minNo,maxNo));
+        restext+=`${randomNumber(minNo,maxNo)} `;
+    } else if(optionRN==2){
+        restext+=`${randomCharacter()} `;
     } else {
-        console.log(optionRN);
+        const sizeOfstring =rn.sizeOfstring;
+        for(let i =0 ;i<sizeOfstring;i++){
+            restext+=`${randomCharacter()}`;
+        }
     }
     fs.writeFile("file.txt",restext,(err)=>{
         if(err)
@@ -39,6 +40,9 @@ app.get("/file.txt",(req,res)=>{
         if (err) throw err;
        res.send(data)
       });
+})
+app.get("/about",(req,res)=>{
+    res.render("about");
 })
 let port  = process.env.PORT || 3000;
 app.listen(port,()=>{
