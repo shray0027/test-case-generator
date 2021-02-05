@@ -16,7 +16,9 @@ app.get("/",(req,res)=>{
         restext:"enter your options"});
 }).post("/",(req,res)=>{
     const rn = req.body;
+    console.log(rn);
     let restext=``
+    const testcase=rn.testcase
     if(rn.testcaseFlag=='on'){
          restext = `${rn.testcase} \n`;
     }

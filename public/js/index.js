@@ -8,6 +8,7 @@ const arr_l = document.querySelector(".arr-label");
 const t_l = document.querySelector(".t-label");
 const g_l = document.querySelector(".g-label");
 const range= document.querySelectorAll(".range");
+const cb= document.querySelectorAll(".cb");
 const generateRN= document.querySelector(".rn-form");
 const date =  new Date();
 year.textContent = date.getFullYear();
@@ -73,14 +74,34 @@ function whichOptionSelectedRN(e){
         }
     }
 }
-// generateRN.addEventListener("submit",(e) =>{
-//     e.preventDefault();
-// })
-// let txt;
-// function preload(){
-//     txt=loadStrings("file.txt");
-  
-// }
-// function setup(){
-//     console.log(txt);
-// }
+const whichOptionSelectedARR= e=>{
+    if(e===0){
+        range[6].disabled=true;
+        range[9].disabled=false;
+        range[10].disabled=false;
+        cb[1].disabled=true;
+    } else {
+        if(e===1){
+            range[6].disabled=true;
+            range[9].disabled=true;
+            range[10].disabled=true;
+            cb[1].disabled=true;
+        } else {
+            range[6].disabled=false;
+            range[9].disabled=true;
+            range[10].disabled=true;
+            cb[1].disabled=false;
+        }
+    }
+}
+
+const sizeArray =()=>{
+       range[5].disabled=!range[5].disabled;
+}
+const sizeString =()=>{
+       range[6].disabled=!range[6].disabled;
+}
+const chaMatrix=()=>{
+    range[7].disabled=!range[7].disabled
+    range[8].disabled=!range[8].disabled
+}

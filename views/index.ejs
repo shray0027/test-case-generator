@@ -1,129 +1,153 @@
 <%- include("partials/header"); -%>
 <div class="options">
-    <div type="button" onclick="choose_rn()" class="rn-label"><p class="label-p">Number</p></div>
-    <div type="button" onclick="choose_arr()" class="arr-label"><p class="label-p">Array</p></div>
-    <div type="button" onclick="choose_t()"  class="t-label"><p class="label-p">Tree</p></div>
-    <div type="button" onclick="choose_g()"  class="g-label"><p class="label-p">Graph</p></div>
-    <div class="randomNumber">
-        <div class="rn-content">
-            <form class="rn-form" method="POST" action="/">
-                    <div class="row">
-                        <div class="col-md col1">
-                            <p>no. of testcase</p>
-                            <input type="number" name="testcase" class="range"  required placeholder= "enter size of testcase"/>
-                        </div>
-                        <div class="col-md col2">
-                                <p>include testcase flag</p>
-                               <span> <input type="checkbox" name="testcaseFlag" class="checkbox"/></span>
-                        </div>
-                    </div>
-                    
-                <p>Number/Character/String</p>
-                <select name="noCharOption" required onChange="whichOptionSelectedRN(this.selectedIndex)" id ="#symbol">
-                    <option value="1">number</option>
-                    <option value="2">character</option>
-                    <option value="3">string</option>
-                </select>
-                <p>size of string</p>
-                <input type="number" name="sizeOfstring" class="range" disabled="true" required placeholder= "enter size of string"/>
-               <p class="center">Range</p>
-               <p>minimum no.</p>
-                <input type="number" class="range" required name="minRange" placeholder="min number" />
-                <p>maximum no.</p>
-                <input type="number" class="range" required name="maxRange" placeholder="max number" />
-                <div class="generate-b">
-                    <button  class="rn-b" type="submit">generate</button>
+	<div type="button" onclick="choose_rn()" class="rn-label">
+		<p class="label-p">Number</p>
+	</div>
+	<div type="button" onclick="choose_arr()" class="arr-label">
+		<p class="label-p">Array</p>
+	</div>
+	<div type="button" onclick="choose_t()"  class="t-label">
+		<p class="label-p">Tree</p>
+	</div>
+	<div type="button" onclick="choose_g()"  class="g-label">
+		<p class="label-p">Graph</p>                  
+	</div>
+	<div class="randomNumber">
+		<div class="rn-content">
+			<form class="rn-form" method="POST" action="/">
+				<div class="row">
+					<div class="col-md col1">
+						<p>no. of testcase</p>
+						<input type="number" name="testcase" class="range"  required placeholder= "enter size of testcase"/>
+					</div>
+					<div class="col-md col2">
+						<p>include testcase flag</p>
+						<span>
+							<input type="checkbox" name="testcaseFlag" class="checkbox"/>
+						</span>
+					</div>
+				</div>
+				<p>Number/Character/String</p>
+				<select name="noCharOption" required onChange="whichOptionSelectedRN(this.selectedIndex)" id ="#symbol">
+					<option value="1">number</option>
+					<option value="2">character</option>
+					<option value="3">string</option>
+				</select>
+				<p>size of string</p>
+				<input type="number" name="sizeOfstring" class="range" disabled="true" required placeholder= "enter size of string"/>
+				<p class="center">Range</p>
+				<p>minimum no.</p>
+				<input type="number" class="range" required name="minRange" placeholder="min number" />
+				<p>maximum no.</p>
+				<input type="number" class="range" required name="maxRange" placeholder="max number" />
+				<div class="generate-b">
+					<button  class="rn-b" type="submit">generate</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="array">
+		<div class="arr-content">
+			<form action="/" method="POST" class="arr-form">
+				<div class="row">
+					<div class="col-md col1">
+						<p>No. of testcase</p>
+						<input type="number" name="testcase" class="range"  required placeholder= "enter no. of testcase"/>
+					</div>
+					<div class="col-md col2">
+						<p>Include testcase flag</p>
+						<span>
+							<input type="checkbox" name="testcaseFlag" class="checkbox"/>
+						</span>
+					</div>
+				</div>
+				<p>Number/Character/String</p>
+				<select name="noCharOption" required onChange="whichOptionSelectedARR(this.selectedIndex)" id ="#symbol2">
+					<option value="1">number</option>
+					<option value="2">character</option>
+					<option value="3">string</option>hi
+				</select>
+				<div class="checkbox">
+					<p>Random size Array</p>
+					<span>
+						<input type="checkbox" name="checkRandomArray" onchange="sizeArray()" class="cb"/>
+					</span>
+				</div>
+				<div class="row">
+					<div class="col-md col1">
+						<input type="number" name="arraySize" class="range"  required placeholder= "enter size of array"/>
+					</div>
+					<div class="col-md col2">
+						<p>Include array size flag</p>
+						<input type="checkbox" name="arraySizeFlag" class=""/>
+					</div>
+				</div>
+				<div class="checkbox">
+					<p>Random size string</p>
+					<span>
+						<input type="checkbox" name="checkRandomString" disabled="true" onchange="sizeString()" class="cb"/>
+					</span>
+				</div>
+                <div class="row">
+                    <input type="number" name="sizeOfstring" class="range" disabled="true" required placeholder= "enter size of string"/>
                 </div>
-            </form>
-        </div>
-    </div>
-    <div class="array">
-        <div class="arr-content">
-           <form action="/" method="POST" class="arr-form">
-            <div class="row">
-                <div class="col-md col1">
-                    <p>No. of testcase</p>
-                    <input type="number" name="testcase" class="range"  required placeholder= "enter no. of testcase"/>
-                </div>
-                <div class="col-md col2">
-                        <p>Include testcase flag</p>
-                       <span> <input type="checkbox" name="testcaseFlag" class="checkbox"/></span>
-                </div>
-            </div>
-            <p>Number/Character/String</p>
-            <select name="noCharOption" required onChange="whichOptionSelectedARR(this.selectedIndex)" id ="#symbol">
-                <option value="1">number</option>
-                <option value="2">character</option>
-                <option value="3">string</option>
-            </select>
-            <div class="checkbox">
-                <p>Random size of Array</p>
-                <span> <input type="checkbox" name="checkRandom" class=""/></span>
-            </div>
-            <div class="row">
-                <div class="col-md col1">
-                    <p>Size of array</p>
-                    <input type="number" name="testcase" class="range"  required placeholder= "enter size of array"/>
-                </div>
-                <div class="col-md col2">
-                        <p>Include size flag</p>
-                        <input type="checkbox" name="testcaseFlag" class=""/>
-                </div>
-            </div>
-            <div class="checkbox">
-                <p>Matrix Array</p>
-            <span> <input type="checkbox" name="checkMatrix"/></span>
-            </div>
-            
-            <div class="row">
-                <div class="col-md">
-                    <p>No. of rows</p>
-                    <input type="number" name="noRow" class="range"  required placeholder= "enter no. of rows"/>
-                </div>
-                <div class="col-md">
-                        <p class="r2">No.of coloumns</p>
-                        <input type="number" name="noCol" class="range" placeholder= "enter no. of column"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md">
-                    <p>minimum no.</p>
-                    <input type="number" name="minRange" required placeholder="min number" class="range"/>
-                </div>
-                <div class="col-md">
-                    <p class="r2">maximum no.</p>
-                    <input type="number" name="maxRange" required placeholder="max number" class="range"/>
-                </div>
-            </div>
-            <div class="generate-b">
-                <button  class="arr-b" type="submit">generate</button>
-            </div>
-           
-           </form>
-        </div>
-    </div>
-    <div class="tree">
-        <div class="t-content">
-         
-        </div>
-    </div>
-    <div class="graph">
-        <div class="g-content">
-           
-        </div>
-    </div>
+				<div class="checkbox">
+					<p>Matrix Array</p>
+					<span>
+						<input type="checkbox" name="checkMatrix" onchange="chaMatrix()" class="cb" />
+					</span>
+				</div>
+				<div class="row">
+					<div class="col-md">
+						<p>No. of rows</p>
+						<input type="number" name="noRow" class="range"  disabled="true" required placeholder= "enter no. of rows"/>
+					</div>
+					<div class="col-md">
+						<p class="r2">No.of coloumns</p>
+						<input type="number" name="noCol" class="range" disabled="true" placeholder= "enter no. of column"/>
+					</div>
+				</div>
+				<p class="center">Range</p>
+				<div class="row">
+					<div class="col-md">
+						<p>minimum no.</p>
+						<input type="number" name="minRange" required placeholder="min number" class="range"/>
+					</div>
+					<div class="col-md">
+						<p class="r2">maximum no.</p>
+						<input type="number" name="maxRange" required placeholder="max number" class="range"/>
+					</div>
+				</div>
+				<div class="generate-b">
+					<button  class="arr-b" type="submit">generate</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="tree">
+		<div class="t-content"></div>
+	</div>
+	<div class="graph">
+		<div class="g-content"></div>
+	</div>
 </div>
 <div class="lower-wrap">
-    <div class="output-div">
-        <textarea name="output" class="textArea"><%=restext%></textarea>
-    </div>
-    <div class="btns">
-        <button class="copyBtn"><i class="fas i1 in fa-copy"></i> Copy</button>
-        <button class="copyBtn-sm"><i class="fas in fa-copy"></i></button>
-        <button class="downloadBtn"><i class="fas i1 in fa-download"></i>Download</button>   
-        <button class="downloadBtn-sm"><i class="fas in fa-download"></i></button>  
-    </div>
-    
-</div>
-
-<%- include("partials/footer"); -%>
+	<div class="output-div">
+		<textarea name="output" class="textArea"><%=restext%>
+		</textarea>
+	</div>
+	<div class="btns">
+		<button class="copyBtn">
+			<i class="fas i1 in fa-copy"></i> Copy
+		</button>
+		<button class="copyBtn-sm">
+			<i class="fas in fa-copy"></i>
+		</button>
+		<button class="downloadBtn">
+			<i class="fas i1 in fa-download"></i>Download
+		</button>
+		<button class="downloadBtn-sm">
+			<i class="fas in fa-download"></i>
+		</button>
+	</div>
+</div><%- include("partials/footer"); -%>
