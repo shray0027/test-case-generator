@@ -55,7 +55,7 @@ input:focus,select:focus,button:focus {
 .rn-content{
     z-index: 1;
 }
-.rn-content p{
+.rn-content p,.arr-content p{
    font-weight: 700;
 }
 .rn-content input ,p,select,.row1{
@@ -66,13 +66,21 @@ input:focus,select:focus,button:focus {
 .row{
     width: 80%;
     margin: auto;
-
+    margin-top: 8px;
 }
 .row>*{
     padding-left: 0;
+    padding-right: 0;
 }
 .col-md{
     margin: 0;
+}
+.col-md .range{
+    width: 98%;
+    padding-left: 10px;
+}
+.col-md .r2{
+    padding-left: 10px;
 }
 .col-md p , .col-md input{
     margin: 0;
@@ -83,22 +91,43 @@ input:focus,select:focus,button:focus {
 .col2{
     display: flex;
     margin: auto;
+    flex-direction: row;
 }
 .col2 p {
-    width:80%;
+    padding-left: 10px;
+    flex-grow: 1;
     display: inline-block;
 }
+
 .col2 span{
-    width:15%;
     display: flex;
-   justify-content: flex-end;
 }
 .col2 input{
     display: inline;
     width: 20px;
     height: 20px;
-    padding-top: 10px;
-    
+    padding-top: 10px;   
+}
+.checkbox{
+    display: flex;
+    margin-top: 10px;
+    width:80%;
+    margin: auto;
+    flex-direction: row;
+}
+.checkbox p{
+    margin: 0;
+    display: inline;
+    margin:8px 0;
+    flex-grow: 1;
+}
+.checkbox span{
+    display: flex;
+}
+.checkbox span input{
+    width: 20px;
+    height: 20px;
+    margin: auto;
 }
 .center{
     font-weight: bold;
@@ -155,11 +184,13 @@ input:focus,select:focus,button:focus {
     height: 40px;
     border-radius: 5px;
     margin-top: 10px;
-    position: absolute;
-    right: 10%;
+    margin-left: auto;
 }
-.rn-b{
-    z-index: 2;
+.generate-b{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 16px;
 }
 .lower-wrap{
     position: relative;
@@ -249,9 +280,6 @@ h1{
     font-weight: bold;
 }
 /*footer*/
-
-
-
 .wrap-foot{
     color : #888888;
     padding-top: 20px;
@@ -264,6 +292,11 @@ h1{
 @media(max-width : 800px){
     body{
         width:95%;
+    }
+    .arr-content{
+        min-height: 500px;
+        max-height: 500px;
+        overflow-y: scroll;
     }
     .arr-label,.t-label,.g-label,.rn-label{
         position: absolute;
@@ -308,5 +341,19 @@ h1{
     }
     .row{
         display: block;
+    }
+    .col2 p {
+        padding-left:0;
+        flex-grow: 1;
+        display: inline-block;
+    }
+    .col-md{
+        margin-top: 8px;
+    }
+    .col-md .range{
+        width: 100%;
+    }
+    .col-md .r2{
+        padding-left: 0;
     }
 }
