@@ -7,6 +7,17 @@
     <div class="randomNumber">
         <div class="rn-content">
             <form class="rn-form" method="POST" action="/">
+                    <div class="row">
+                        <div class="col-md col1">
+                            <p>no. of testcase</p>
+                            <input type="number" name="testcase" class="range"  required placeholder= "enter size of string"/>
+                        </div>
+                        <div class="col-md col2">
+                                <p>include testcase flag</p>
+                               <span> <input type="checkbox" name="testcaseFlag" class="checkbox"/></span>
+                        </div>
+                    </div>
+                    
                 <p>Number/Character/String</p>
                 <select name="noCharOption" required onChange="whichOptionSelectedRN(this.selectedIndex)" id ="#symbol">
                     <option value="1">number</option>
@@ -41,7 +52,9 @@
     </div>
 </div>
 <div class="lower-wrap">
-    <div class="textArea"><code><iframe style="overflow-x: hidden; width:100%;font-family: monospace; color :aqua;" src="file.txt" id="inneriframe" frameborder=0 ></iframe></code></div>
+    <div class="output-div">
+        <textarea name="output" class="textArea"><%=restext%></textarea>
+    </div>
     <div class="btns">
         <button class="copyBtn"><i class="fas i1 in fa-copy"></i> Copy</button>
         <button class="copyBtn-sm"><i class="fas in fa-copy"></i></button>

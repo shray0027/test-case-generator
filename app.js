@@ -12,28 +12,40 @@ app.use(bodyParser.urlencoded({extended :true}));
 
 
 app.get("/",(req,res)=>{
-    res.render("index");
+    res.render("index",{
+        restext:"enter your options"});
 }).post("/",(req,res)=>{
     const rn = req.body;
+    let restext=``
+    if(rn.testcaseFlag=='on'){
+         restext = `${rn.testcase} \n`;
+    }
     const optionRN =rn.noCharOption;
-    let restext = ``;
     if(optionRN==1){
         const minNo = parseInt(rn.minRange);
         const maxNo = parseInt(rn.maxRange);
-        restext+=`${randomNumber(minNo,maxNo)} `;
+        for(let i=0;i<rn.testcase;i++){
+            restext+=`${randomNumber(minNo,maxNo)} \n`;
+        }
     } else if(optionRN==2){
-        restext+=`${randomCharacter()} `;
+        for(let i=0;i<rn.testcase;i++){
+            restext+=`${randomCharacter()} \n`;
+        }
     } else {
         const sizeOfstring =rn.sizeOfstring;
-        for(let i =0 ;i<sizeOfstring;i++){
-            restext+=`${randomCharacter()}`;
+        for(let i=0;i<rn.testcase;i++){
+            for(let j =0 ;j<sizeOfstring;j++){
+                restext+=`${randomCharacter()}`;
+            }
         }
     }
+    res.render("index",{
+        restext:restext
+    })
     fs.writeFile("file.txt",restext,(err)=>{
         if(err)
           throw err;
     })
-    res.redirect("/");
 })
 app.get("/file.txt",(req,res)=>{
     fs.readFile("file.txt", 'utf8', function(err, data) {
