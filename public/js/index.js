@@ -104,4 +104,6 @@ const sizeString =()=>{
 const chaMatrix=()=>{
     range[7].disabled=!range[7].disabled
     range[8].disabled=!range[8].disabled
+    range[5].disabled=!range[5].disabled
+    cb[0].disabled=!cb[0].disabled;
 }

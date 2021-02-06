@@ -241,7 +241,9 @@
     margin-top: 32px;
     margin-bottom: 16px;
   }
-  
+  .option{
+    display: none;
+  }
   .textArea {
     height: 220px;
     width: 100%;
