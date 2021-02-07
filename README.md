@@ -7,8 +7,8 @@
 ---
 ### 1. Numbers / Character / Arrays
 <table>
-</tr>
-<tr><td>Desktop view</td><td>Mobile view</td>
+
+<tr><td>Desktop view</td><td>Mobile view</td></tr>
 <tr>
  <img src= "img/noD.png" alt ="noD">
 </td>
