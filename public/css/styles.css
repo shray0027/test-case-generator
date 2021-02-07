@@ -253,8 +253,40 @@
     border-radius: 5px;
     overflow-y: scroll;
     font-family: monospace;
+    top: 0;
   }
-  
+  .output-div{
+    height: 220px;
+    position: relative;
+  }
+  .tool-upper{
+    position: absolute;
+    display: none;
+    width: 100%;
+    top :8px;
+    animation: fading 2.5s 1; }
+    @keyframes fading{
+      0%{opacity:0}
+      50%{opacity:1}
+      100%{opacity:0}
+    }
+  .tool{
+    font-size: 12px;
+    height: 20px;
+    margin: auto;
+    display: block;
+    background: #292929;
+    width: 80px;
+    border-radius: 10px;
+    color: #D0D0D0;
+    z-index: 3;
+    text-align: center;
+  }.tool span{
+
+    margin: 0;
+    display: inline;
+    padding: 15px;
+  }
   .btns {
     bottom: 15px;
     right: 5px;

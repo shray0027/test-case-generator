@@ -11,6 +11,8 @@ const range= document.querySelectorAll(".range");
 const cb= document.querySelectorAll(".cb");
 const generateRN= document.querySelector(".rn-form");
 const output=document.querySelector(".textArea");
+const tool=document.querySelector(".tool-upper");
+const tool1=document.querySelector(".tool");
 const date =  new Date();
 year.textContent = date.getFullYear();
 const choose_rn = ()=>{
@@ -101,7 +103,6 @@ const chaMatrix=()=>{
         range[8].disabled=!range[8].disabled
         range[5].disabled=!range[5].disabled
 }
-console.log(output.value);
 const copy = () => {
     const el = document.createElement('textarea');
     el.value = output.value;
@@ -109,4 +110,18 @@ const copy = () => {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
+    tool1.style.width="80px";
+    tool.lastElementChild.innerHTML="Copied!!";
+    tool.style.display="flex";
+    setTimeout(()=>{
+        tool.style.display="none";
+    },2500);
   };
+  const download =()=>{
+    tool1.style.width="100px";
+    tool.lastElementChild.innerHTML="Downloaded!!";
+    tool.style.display="flex";
+    setTimeout(()=>{
+        tool.style.display="none";
+    },2500);
+  }
