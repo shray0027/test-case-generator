@@ -16,3 +16,6 @@
 <td><img src= "public/img/noM.png" alt ="noM"></td>
 </tr>
 </table>
+```
+If you want to generate single integers , characters and strings you can generate in this part  
+```
