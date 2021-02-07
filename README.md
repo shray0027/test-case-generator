@@ -11,8 +11,12 @@
 <tr><td>Desktop view</td><td>Mobile view</td>
 <tr>
 <td>
- <img src= "img/noD.png" alt ="noD">
+<<<<<<< HEAD
+
+=======
+ <img src= "images/bunnyhop-preview-1.png" alt ="images/bunnyhop-preview-1">
 </td>
-<td><img src= "img/noM.png" alt ="noM"></td>
+<td><img src= "images/bunnyhop-preview-2.png" alt ="images/bunnyhop-preview-2"></td>
+>>>>>>> b09f1220843cf1b40f3228c6f6f25c6c8bf746a5
 </tr>
 </table>
