@@ -10,8 +10,9 @@
 
 <tr><td>Desktop view</td><td>Mobile view</td></tr>
 <tr>
- <img src= "img/noD.png" alt ="noD">
+<td><
+ <img src= "public/img/noD.png" alt ="noD">
 </td>
-<td><img src= "img/noM.png" alt ="noM"></td>
+<td><img src= "public/img/noM.png" alt ="noM"></td>
 </tr>
 </table>
