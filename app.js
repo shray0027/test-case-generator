@@ -43,6 +43,7 @@ app.get("/", (req, res) => {
         for (let j = 0; j < sizeOfstring; j++) {
           restext += `${randomCharacter()}`;
         }
+        restext+=`\n`;
       }
     }
   } else if (option == 2) {
