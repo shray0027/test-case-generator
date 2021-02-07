@@ -10,6 +10,7 @@ const g_l = document.querySelector(".g-label");
 const range= document.querySelectorAll(".range");
 const cb= document.querySelectorAll(".cb");
 const generateRN= document.querySelector(".rn-form");
+const output=document.querySelector(".textArea");
 const date =  new Date();
 year.textContent = date.getFullYear();
 const choose_rn = ()=>{
@@ -59,51 +60,53 @@ const choose_g = ()=>{
 
 function whichOptionSelectedRN(e){
     if(e===0){
-       range[2].disabled=false;
-       range[3].disabled=false;
-       range[1].disabled=true;
+            range[2].disabled=false;
+            range[3].disabled=false;
+            range[1].disabled=true;
     } else {
         if(e===2){
-           range[1].disabled=false;
-           range[2].disabled=true;
-           range[3].disabled=true;
+            range[1].disabled=false;
+            range[2].disabled=true;
+            range[3].disabled=true;
         } else {
-       range[2].disabled=true;
-       range[3].disabled=true;
-       range[1].disabled=true;
+            range[2].disabled=true;
+            range[3].disabled=true;
+            range[1].disabled=true;
         }
     }
 }
 const whichOptionSelectedARR= e=>{
     if(e===0){
-        range[6].disabled=true;
-        range[9].disabled=false;
-        range[10].disabled=false;
-        cb[1].disabled=true;
+            range[6].disabled=true;
+            range[9].disabled=false;
+            range[10].disabled=false;
+            cb[0].disabled=true;
     } else {
         if(e===1){
             range[6].disabled=true;
             range[9].disabled=true;
             range[10].disabled=true;
-            cb[1].disabled=true;
+            cb[0].disabled=true;
         } else {
             range[6].disabled=false;
             range[9].disabled=true;
             range[10].disabled=true;
-            cb[1].disabled=false;
+            cb[0].disabled=false;
         }
     }
 }
 
-const sizeArray =()=>{
-       range[5].disabled=!range[5].disabled;
-}
-const sizeString =()=>{
-       range[6].disabled=!range[6].disabled;
-}
 const chaMatrix=()=>{
-    range[7].disabled=!range[7].disabled
-    range[8].disabled=!range[8].disabled
-    range[5].disabled=!range[5].disabled
-    cb[0].disabled=!cb[0].disabled;
+        range[7].disabled=!range[7].disabled
+        range[8].disabled=!range[8].disabled
+        range[5].disabled=!range[5].disabled
 }
+console.log(output.value);
+const copy = () => {
+    const el = document.createElement('textarea');
+    el.value = output.value;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  };

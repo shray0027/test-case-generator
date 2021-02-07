@@ -71,9 +71,7 @@
 				</select>
 				<div class="checkbox">
 					<p>Random size Array</p>
-					<span>
-						<input type="checkbox" name="checkRandomArray" onchange="sizeArray()" class="cb"/>
-					</span>
+					
 				</div>
 				<div class="row">
 					<div class="col-md col1">
@@ -86,9 +84,6 @@
 				</div>
 				<div class="checkbox">
 					<p>Random size string</p>
-					<span>
-						<input type="checkbox" name="checkRandomString" disabled="true" onchange="sizeString()" class="cb"/>
-					</span>
 				</div>
                 <div class="row">
                     <input type="number" name="sizeOfstring" class="range" disabled="true" required placeholder= "enter size of string"/>
@@ -139,10 +134,10 @@
 		</textarea>
 	</div>
 	<div class="btns">
-		<button class="copyBtn">
+		<button class="copyBtn" onclick="copy()">
 			<i class="fas i1 in fa-copy"></i> Copy
 		</button>
-		<button class="copyBtn-sm">
+		<button class="copyBtn-sm" onclick="copy()">
 			<i class="fas in fa-copy"></i>
 		</button>
 		<button class="downloadBtn">

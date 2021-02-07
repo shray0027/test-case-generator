@@ -4,7 +4,6 @@ const ejs = require("ejs");
 const fs = require("fs");
 const randomNumber = require(__dirname + "/utils/randomNo");
 const randomCharacter = require(__dirname + "/utils/randomCh");
-const randomString = require(__dirname + "/utils/randomString");
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -81,8 +80,6 @@ app.get("/", (req, res) => {
           }
         }
       } else {
-        const checkRandomString=rn.checkRandomString; 
-        const checkRandomArray=rn.checkRandomArray;
         for(let i=0;i<testcase;i++){
             if(arraySizeFlag=="on"){
                 restext+=`${n} ${m} \n`
@@ -90,13 +87,6 @@ app.get("/", (req, res) => {
             for(let j=0;j<n;j++){
                 for(let k=0;k<m;k++){
                     let sizeString=rn.sizeOfstring;
-                    if(checkRandomString=="on"){
-                        const minNo=rn.minRange;
-                        const maxNo=rn.maxRange;
-                        sizeString=randomNumber(minNo,maxNo);
-                    } else {
-                        sizeString=rn.sizeOfstring;
-                    }
                     for(let l=0;l<sizeString;l++){
                         restext+=`${randomCharacter()}`;
                     }
@@ -108,17 +98,12 @@ app.get("/", (req, res) => {
       }
     } else {
       const arraySizeFlag = rn.arraySizeFlag;
-      const checkRandomArray = rn.checkRandomArray;
+      let size=rn.arraySize;
       if (optionARR == 1) {
         const minRange = rn.minRange;
         const maxRange = rn.maxRange;
         for (let i = 0; i < testcase; i++) {
-          let size;
-          if (checkRandomArray == "on") {
-            size = randomNumber(1, 100000000);
-          } else {
-            size = rn.arraySize;
-          }
+
           if (arraySizeFlag == "on") {
             restext += `${size} \n`;
           }
@@ -129,12 +114,7 @@ app.get("/", (req, res) => {
         }
       } else if (optionARR == 2) {
         for (let i = 0; i < testcase; i++) {
-          let size;
-          if (checkRandomArray == "on") {
-            size = randomNumber(1, 1000000);
-          } else {
-            size = rn.arraySize;
-          }
+
           if (arraySizeFlag == "on") {
             restext += `${size} \n`;
           }
@@ -144,28 +124,12 @@ app.get("/", (req, res) => {
           restext += `\n`;
         }
       } else {
-          console.log(rn);
-        const checkRandomString=rn.checkRandomString; 
-        const checkRandomArray=rn.checkRandomArray;
         for(let i=0;i<testcase;i++){
-            let sizeArray;
-            if(checkRandomArray=="on"){
-                sizeArray=randomNumber(1,1000000);
-            } else {
-                sizeArray=rn.arraySize;
-            }
             if(arraySizeFlag=="on"){
                 restext+=`${sizeArray} \n`
             }
                 for(let k=0;k<sizeArray;k++){
                     let sizeString=rn.sizeOfstring;
-                    if(checkRandomString=="on"){
-                        // const minNo=rn.minRange;
-                        // const maxNo=rn.maxRange;
-                        sizeString=randomNumber(1,10);
-                    } else {
-                        sizeString=rn.sizeOfstring;
-                    }
                     for(let l=0;l<sizeString;l++){
                         restext+=`${randomCharacter()}`;
                     }
