@@ -10,7 +10,7 @@
 
 <tr><td>Desktop view</td><td>Mobile view</td></tr>
 <tr>
-<td><
+<td>
  <img src= "public/img/noD.png" alt ="noD">
 </td>
 <td><img src= "public/img/noM.png" alt ="noM"></td>
